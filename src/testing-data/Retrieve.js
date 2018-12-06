@@ -5,7 +5,6 @@ function getCountry(dishes) {
         return dish.country === "China";
     });
 }
-
 console.log(getCountry(dishes));
 //returns all recipes for China
 
