@@ -45,6 +45,7 @@ const dishes = [
         image: "/img"
     },
     {
+
         title: "Vegetable rice",
         country: "China",
         course: "main",

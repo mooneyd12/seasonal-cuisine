@@ -16,6 +16,7 @@ function getCourse(getCountry) {
 console.log(getCourse(getCountry));
 // returns an array of objects with all recipes for main courses from China
 
+
 function getGlutenFree(getCourse) {
     return getCourse(getCountry)
         .filter(dish => {
@@ -43,6 +44,4 @@ function getVegan(getCourse) {
 
 getVegan(getCourse)
 // returns [{China, main, vegan}]
-
-
 
