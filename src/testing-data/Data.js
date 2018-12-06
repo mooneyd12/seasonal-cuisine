@@ -45,6 +45,21 @@ const dishes = [
         image: "/img"
     },
     {
+
+        title: "Vegetable rice",
+        country: "China",
+        course: "main",
+        dietaryrestrictions: {
+            gluten: false,
+            vegetarian: true,
+            vegan: true,
+            none: true
+        },
+        recipe: "let's cook",
+        time: "30min",
+        image: "/img"
+    },
+    {
         title: "Sago pudding",
         country: "China",
         course: "desert",
