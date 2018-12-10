@@ -14,7 +14,7 @@ function getCourse(getCountry) {
     });
 }
 console.log(getCourse(getCountry));
-// returns an array of objects with all recipes for main courses from China
+// // returns an array of objects with all recipes for main courses from China
 
 function getGlutenFree(getCourse) {
     return getCourse(getCountry)
