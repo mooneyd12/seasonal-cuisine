@@ -3,7 +3,8 @@ import img1 from "./../img/cookies.jpg";
 import img2 from "./../img/cookies2.jpg";
 import img3 from "./../img/meet.jpg";
 import img4 from "./../img/meet2.jpg";
-const dishes = [
+
+const recipes = [
   {
     id: "kolivo",
     country: "Bulgaria",
@@ -303,4 +304,4 @@ const dishes = [
     image: img4
   }
 ];
-export default dishes;
+export default recipes;
