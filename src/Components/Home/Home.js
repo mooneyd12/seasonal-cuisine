@@ -50,6 +50,7 @@ class Home extends Component {
             ) : null}
           </div>
         </div>
+        <Button />
       </div>
     );
   }

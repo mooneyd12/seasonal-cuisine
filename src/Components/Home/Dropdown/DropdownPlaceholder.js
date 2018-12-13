@@ -4,7 +4,7 @@ import "./DropdownPlaceholder.css";
 export default class DropdownPlaceholder extends React.Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
       recipes: [],
       filteredCountries: []
