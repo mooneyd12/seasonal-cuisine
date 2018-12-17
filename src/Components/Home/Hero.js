@@ -4,7 +4,7 @@ import HeroText from "./HeroText";
 import DropdownPlaceholder from "./Dropdown/DropdownPlaceholder";
 import "./Hero.css";
 
-export default function Hero() {
+export default function Hero(props) {
   return (
     <div className="wrap-hero">
       <div className="wrap-img-text-drop">
@@ -12,7 +12,8 @@ export default function Hero() {
           <img src={HeroImage} alt="hero" />
         </div>
         <HeroText />
-        <DropdownPlaceholder />
+        <DropdownPlaceholder 
+          onCountrySelected={country => props.onCountrySelected(country)} onCourseSelected={course => props.onCourseSelected(course)} />
       </div>
     </div>
   );

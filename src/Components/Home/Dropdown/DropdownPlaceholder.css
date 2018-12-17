@@ -31,6 +31,11 @@ select {
   border: none;
   outline: none;
 }
+select {
+  flex-wrap: wrap;
+  margin: auto;
+}
+
 @media (min-width: 768px) {
   .dropdown-placeholder {
     top: 65%;

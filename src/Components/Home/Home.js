@@ -9,85 +9,53 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      total: 15,
-      currentCount: 3,
-      offset: 3,
-      list: [],
-      isFetching: false
+      filters: {
+        country: '',
+        course: '',
+        restrictions: ''
+      }
     };
   }
 
-  componentWillMount() {
-    this.loadInitialContent();
+  updateCountry(country) {
+    let filters = this.state.filters;
+    filters.country = country;
+    this.setState({ filters },() => {console.log(this.state.filters)});
+  }
+  updateCourse(course) {
+    let filters = this.state.filters;
+    filters.course = course;
+    this.setState({ filters }, () => {console.log(this.state.filters)}) ;
   }
 
-  componentDidMount() {
-    window.addEventListener("scroll", this.loadOnScroll);
+  getFilteredRecipes() {
+    return Recipes
+      .filter(recipe => this.state.filters.country ? recipe.country === this.state.filters.country : true) //country filter
+      .filter(recipe => this.state.filters.course ? recipe.course === this.state.filters.course : true) //course filter
   }
 
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.loadOnScroll);
-  }
-
+  
   render() {
     return (
       <div>
-        <Hero />
+        <Hero 
+          onCountrySelected={country => this.updateCountry(country)} 
+          onCourseSelected={course => this.updateCourse(course)}/>
         <div className="background">
           <div className="flex-grid">
-            {this.state.list.map((recipe, index) => (
-              <div key={index}>
-                <Recipe
-                  id2={recipe.id}
-                  title2={recipe.title}
-                  country2={recipe.country}
-                  image2={recipe.image}
-                />
-              </div>
+            {this.getFilteredRecipes().map((recipe, index) => (
+              <Recipe
+                key={index}
+                id2={recipe.id}
+                title2={recipe.title}
+                country2={recipe.country}
+                image2={recipe.image}
+              />
             ))}
-            {this.state.currentCount !== this.state.total ? (
-              <div id="content-end" onClick={e => this.forceLoadOnScroll()} />
-            ) : null}
           </div>
         </div>
       </div>
     );
-  }
-
-  loadOnScroll = e => {
-    if (this.state.currentCount === this.state.total) return;
-    var el = document.getElementById("content-end");
-    var rect = el.getBoundingClientRect();
-    var isAtEnd =
-      // rect.top >= 0 &&
-      // rect.left >= 0 &&
-      rect.bottom <=
-      (window.innerHeight ||
-        document.documentElement.clientHeight); /*or $(window).height() */
-    if (isAtEnd) {
-      //User at the end of content. load more content
-      if (!this.state.isFetching) {
-        this.setState({ isFetching: true });
-
-        //get content from server
-        setTimeout(() => {
-          var count = this.state.currentCount + this.state.offset;
-          if (this.state.currentCount !== this.state.total) {
-            this.setState({
-              isFetching: false,
-              currentCount: count,
-              list: Recipes.slice(0, count)
-            });
-          }
-        }, 500);
-      }
-    }
-  };
-
-  loadInitialContent() {
-    //Get content from server using your preferred method (like AJAX, relay)
-    let ary = Recipes.slice(0, this.state.offset);
-    this.setState({ list: ary });
   }
 }
 
