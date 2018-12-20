@@ -8,6 +8,7 @@
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 0.8rem;
   grid-row-gap: 0.7rem;
+  padding-bottom: 40px;
 }
 .wrap-recipe {
   position: relative;
