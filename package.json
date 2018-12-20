@@ -1,7 +1,6 @@
 {
   "homepage": "http://kodiri.github.io/seasonal-cuisine",
   "name": "seasonal-cuisine",
-  "homepage": "http://kodiri.github.io/seasonal-cuisine",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
