@@ -14,7 +14,7 @@ export default class DropdownPlaceholder extends React.Component {
             <option value="Bulgaria">Bulgaria</option>
             <option value="Romania">Romania</option>
             <option value="Trinidad &amp; Tobago">Trinidad & Tobago</option>
-            <option value="Pakistan">Pakistan</option>
+            <option value="Tunisia">Tunisia</option>
           </select>
           <select name="course" className="options" defaultValue=""
           onChange={event => this.props.onCourseSelected(event.target.value)}>
@@ -22,7 +22,7 @@ export default class DropdownPlaceholder extends React.Component {
             <option value="main">Main</option>
             <option value="dessert">Dessert</option>
           </select>
-          <select name="dietaryrestrictions" className="options" defaultValue="" 
+          <select name="dietaryrestrictions" className="options" defaultValue=""
           onChange={event => this.props.onRestrictionsSelected(event.target.value)}>
             <option value="">Dietary restrictions</option>
             <option value="gluten">Gluten-free</option>
